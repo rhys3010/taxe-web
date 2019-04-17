@@ -9,14 +9,28 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {LoginComponent} from './login/login.component';
+
+import { AuthComponent } from './modules/auth/auth.component';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  // Redirect to Home Path if anything else
-  { path: '**', redirectTo: ''}
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  }, {
+    path: '',
+    component: AuthComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './modules/auth/auth.module#AuthModule'
+      }
+    ]
+  }, {
+    path: '**',
+    redirectTo: 'dashboard'
+  }
 ];
 
 @NgModule({
