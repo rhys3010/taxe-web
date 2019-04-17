@@ -31,7 +31,11 @@ export class NavbarComponent implements OnInit {
     this.sidebarVisible = false;
   }
 
-  ngOnInit(){
+  /**
+   * Called when the navbar is initialized
+   */
+  ngOnInit() {
+    // Get the list of page titles from the sidebar's component
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
@@ -45,6 +49,9 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  /**
+   * Called to open the sidebar when viewed using mobile device
+   */
   sidebarOpen() {
     const toggleButton = this.toggleButton;
     const body = document.getElementsByTagName('body')[0];
@@ -55,13 +62,19 @@ export class NavbarComponent implements OnInit {
     body.classList.add('nav-open');
 
     this.sidebarVisible = true;
-  };
+  }
+
+  /**
+   * Called to close the sidebar
+   */
   sidebarClose() {
     const body = document.getElementsByTagName('body')[0];
     this.toggleButton.classList.remove('toggled');
     this.sidebarVisible = false;
     body.classList.remove('nav-open');
-  };
+  }
+
+
   sidebarToggle() {
     // const toggleButton = this.toggleButton;
     // const body = document.getElementsByTagName('body')[0];
@@ -118,20 +131,26 @@ export class NavbarComponent implements OnInit {
       this.mobile_menu_visible = 1;
 
     }
-  };
+  }
 
+  /**
+   * Retrieve the title of the current page, by checking the sidebar component's ROUTES
+   */
   getTitle() {
-    var title = this.location.prepareExternalUrl(this.location.path());
-    if(title.charAt(0) === '#'){
+    // Get the current route
+    let title = this.location.prepareExternalUrl(this.location.path());
+    if (title.charAt(0) === '#') {
       title = title.slice( 2 );
     }
-    title = title.split('/').pop();
-
-    for(var item = 0; item < this.listTitles.length; item++) {
-      if(this.listTitles[item].path === title){
-        return this.listTitles[item].title;
+    // Iterate through all of the routes specified in the Sidebar Component
+    // And check if the current route matches any, if so - that's the title.
+    for (const item of this.listTitles) {
+      console.log(item.path);
+      console.log(title);
+      if (item.path === title) {
+        return item.title;
       }
     }
-    return 'Dashboard';
+    return title;
   }
 }
