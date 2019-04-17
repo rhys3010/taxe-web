@@ -17,7 +17,7 @@ import { MainComponent } from './modules/main/main.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'company-profile',
     pathMatch: 'full',
   }, {
     path: '',
@@ -39,7 +39,7 @@ const routes: Routes = [
     ]
   }, {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'company-profile'
   }
 ];
 

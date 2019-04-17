@@ -13,6 +13,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainRoutes } from './main.routing';
 
+import { CompanyProfileComponent } from '../../pages/company-profile/company-profile.component';
+import { ActiveBookingsComponent } from '../../pages/active-bookings/active-bookings.component';
+import { AvailableBookingsComponent } from '../../pages/available-bookings/available-bookings.component';
+import { BookingHistoryComponent } from '../../pages/booking-history/booking-history.component';
+import { DriversComponent } from '../../pages/drivers/drivers.component';
+
 
 import {
   MatButtonModule,
@@ -35,6 +41,11 @@ import {
     MatTooltipModule,
   ],
   declarations: [
+    CompanyProfileComponent,
+    ActiveBookingsComponent,
+    AvailableBookingsComponent,
+    BookingHistoryComponent,
+    DriversComponent
   ]
 })
 export class MainModule { }
