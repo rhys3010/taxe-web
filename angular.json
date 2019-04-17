@@ -27,15 +27,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "node_modules/font-awesome/scss/font-awesome.scss",
-              "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
-              "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
-              "src/styles.scss",
-              "src/assets/scss/taxe-web.scss"
+              "src/assets/scss/material-dashboard/material-dashboard.scss",
+              "src/assets/scss/taxe-web.scss",
+              "src/styles.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.slim.min.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/bootstrap-notify/bootstrap-notify.js",
               "node_modules/hammerjs/hammer.min.js"
             ],
             "es5BrowserSupport": true

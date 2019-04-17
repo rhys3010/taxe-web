@@ -14,11 +14,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutes } from './auth.routing';
 
 import { LoginComponent } from '../../pages/login/login.component';
+
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatRippleModule,
+  MatFormFieldModule,
+  MatTooltipModule,
+  MatSelectModule
+} from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AuthRoutes),
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
   ],
   declarations: [
     LoginComponent

@@ -11,6 +11,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthComponent } from './modules/auth/auth.component';
+import { MainComponent } from './modules/main/main.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
+  }, {
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './modules/main/main.module#MainModule'
+      }
+    ]
   }, {
     path: '',
     component: AuthComponent,
