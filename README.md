@@ -1,6 +1,8 @@
-# TaxeWeb
+<img src="https://i.imgur.com/EK1RSH9.png" width="120" height="120">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+# Tax-E Company Management Web App
+
+Angular Frontend Application to interface with the Tax-E API to allow company admins to manage their company's preferences, drivers and bookings.
 
 ## Development server
 
