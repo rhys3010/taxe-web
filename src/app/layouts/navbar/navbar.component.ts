@@ -14,21 +14,28 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 
+import { User } from '../../_models/user';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  private listTitles: any[];
+  // The loaded user
+  user: User;
   location: Location;
   mobile_menu_visible: any = 0;
+  // Private variables
+  private listTitles: any[];
   private toggleButton: any;
   private sidebarVisible: boolean;
 
   constructor(location: Location,  private element: ElementRef, private router: Router) {
     this.location = location;
     this.sidebarVisible = false;
+    // Get the current user
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   /**
@@ -74,7 +81,9 @@ export class NavbarComponent implements OnInit {
     body.classList.remove('nav-open');
   }
 
-
+  /**
+   * Called to toggle the sidebar
+   */
   sidebarToggle() {
     // const toggleButton = this.toggleButton;
     // const body = document.getElementsByTagName('body')[0];
@@ -145,8 +154,6 @@ export class NavbarComponent implements OnInit {
     // Iterate through all of the routes specified in the Sidebar Component
     // And check if the current route matches any, if so - that's the title.
     for (const item of this.listTitles) {
-      console.log(item.path);
-      console.log(title);
       if (item.path === title) {
         return item.title;
       }

@@ -1,3 +1,13 @@
+/**
+ * main.component.ts
+ *
+ * The component file for the app's main screen.
+ *
+ * @author Creative tim
+ * @author Rhys Evans
+ * @version 0.1
+ */
+
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
@@ -18,6 +28,9 @@ export class MainComponent implements OnInit {
 
   constructor( public location: Location, private router: Router) {}
 
+  /**
+   * Called when the component is initialized
+   */
   ngOnInit() {
     const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
@@ -55,9 +68,17 @@ export class MainComponent implements OnInit {
       ps = new PerfectScrollbar(elemSidebar);
     }
   }
+
+  /**
+   * Called shortly after component initialization
+   */
   ngAfterViewInit() {
     this.runOnRouteChange();
   }
+
+  /**
+   * Called when the route is changed within the main module
+   */
   runOnRouteChange(): void {
     if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
@@ -65,6 +86,10 @@ export class MainComponent implements OnInit {
       ps.update();
     }
   }
+
+  /**
+   * Utility method to return whether device is Macintosh
+   */
   isMac(): boolean {
     let bool = false;
     if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {

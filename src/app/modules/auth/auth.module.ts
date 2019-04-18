@@ -34,6 +34,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ReactiveFormsModule
   ],
   declarations: [
     LoginComponent
