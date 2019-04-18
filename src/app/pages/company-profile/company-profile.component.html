@@ -1,4 +1,126 @@
+<!--
+   - company-profile.component.html
+   -
+   - The main html layout for the company profile html layout
+   -
+   - @author Creative Tim
+   - @author Rhys Evans
+   - @version 0.1
+-->
+
 <div class="main-content">
-  <h1>Company Profile</h1>
+  <div class="container-fluid">
+    <!-- Company Name -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Generic Taxi Co</h2>
+      </div>
+    </div>
+    <!-- Company Stats -->
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">calendar_today</i>
+            </div>
+            <p class="card-category">Registered Since</p>
+            <h3 class="card-title">03/04/2019</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Retrieved from API
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">local_taxi</i>
+            </div>
+            <p class="card-category">Bookings Taken</p>
+            <h3 class="card-title">45</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Retrieved from API
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">people</i>
+            </div>
+            <p class="card-category">Employed Drivers</p>
+            <h3 class="card-title">4</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Retrieved from API
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">security</i>
+            </div>
+            <p class="card-category">Admins</p>
+            <h3 class="card-title">2</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Retrieved from API
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Admin List -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Admins</h4>
+            <p class="card-category">All of the company's listed admins</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>John Doe</td>
+                  <td>johndoe@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Rhys Evans</td>
+                  <td>rhys301097@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Andrew Drew</td>
+                  <td>drewdog123@hotmail.com</td>
+                </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
