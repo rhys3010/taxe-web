@@ -1,3 +1,95 @@
+<!--
+   - drivers.component.html
+   -
+   - The main html layout for the drivers page
+   -
+   - @author Creative Tim
+   - @author Rhys Evans
+   - @version 0.1
+-->
+
 <div class="main-content">
-  <h1>Drivers</h1>
+  <div class="container-fluid">
+    <!-- New Driver -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Add Driver</h4>
+            <p class="card-category">Recruit a Driver into your company</p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <input id="email" type="email" class="form-control" name="email" placeholder="Driver's Email" value="">
+              </div>
+              <div class="col-sm-4">
+                <button class="btn btn-primary btn-sm mat-raised-button text-white pull-right" type="submit">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Drivers List -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Drivers</h4>
+            <p class="card-category">All Employed Drivers</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  Availability
+                </th>
+                <th>
+                </th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    John Doe
+                  </td>
+                  <td>
+                    johndoe@gmail.com
+                  </td>
+                  <td>
+                    Available
+                  </td>
+                  <td>
+                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right">Remove</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Jane Doe
+                  </td>
+                  <td>
+                    janedoe@gmail.com
+                  </td>
+                  <td>
+                    <span class="text-danger mat-body-strong">Unavailable</span>
+                  </td>
+                  <td>
+                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right">Remove</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
