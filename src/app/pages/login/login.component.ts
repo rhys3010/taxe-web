@@ -14,6 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../_services/authentication.service';
+import { NotificationService } from '../../_services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -24,11 +25,13 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
   submitted = false;
+  hasError = false;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private notificationService: NotificationService) {
   }
 
   /**
@@ -61,8 +64,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // If the form was invalid, return.
+    // If the form was invalid, return and show error.
     if (this.loginForm.invalid) {
+      this.notificationService.showNotification('danger', 'error', 'Email and Password fields must not be empty');
+      this.hasError = true;
       return;
     }
     // Log user in using the credentials through the authentication service
@@ -73,6 +78,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
+          this.hasError = true;
         }
       );
   }

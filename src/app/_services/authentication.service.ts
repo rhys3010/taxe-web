@@ -13,9 +13,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
+import { NotificationService } from './notification.service';
+
 @Injectable()
 export class AuthenticationService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private notificationService: NotificationService) {}
 
   /**
    * Send login request to API to validate user credentials
@@ -30,8 +32,14 @@ export class AuthenticationService {
       .pipe(map(user => {
         // If the user has been populated and a token found, login was successful
         if (user && user.token) {
-          // Store the authed user in local storage
-          localStorage.setItem('user', JSON.stringify(user));
+          // If the user is a Company Admin, allow them in and store the authed user
+          if (user.role === 'Company_Admin') {
+            // Store the authed user in local storage
+            localStorage.setItem('user', JSON.stringify(user));
+          } else {
+            // Else, return error
+            this.notificationService.showNotification('danger', 'error', 'Invalid Role: You must be a Company Admin to access this tool');
+          }
         }
         return user;
       }));

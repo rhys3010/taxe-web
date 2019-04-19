@@ -25,6 +25,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { AuthenticationService } from './_services/authentication.service';
 
 import { LayoutsModule } from './layouts/layouts.module';
+import {NotificationService} from './_services/notification.service';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { LayoutsModule } from './layouts/layouts.module';
   providers: [
     AuthGuard,
     AuthenticationService,
+    NotificationService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

@@ -14,3 +14,13 @@
 .footnote div{
   font-size: 12px;
 }
+
+.has-error{
+  input{
+    color: $error-color;
+  }
+
+  input::placeholder{
+    color: $error-color;
+  }
+}

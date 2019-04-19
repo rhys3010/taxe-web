@@ -13,18 +13,18 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { NotificationService } from '../_services/notification.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private notificationService: NotificationService) {}
   // Intercept the response to handle any errors returned
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(catchError(err => {
       // HANDLE SPECIAL CASES
       // Show generic error notification
-      const error = err.error.message;
-      console.log(error);
-      return throwError(error);
+      this.notificationService.showNotification('danger', 'error', err.error.description);
+      return throwError(err.error.message);
     }));
   }
 }

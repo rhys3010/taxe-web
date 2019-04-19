@@ -18,13 +18,13 @@
     <div class="card-header text-white text-center bg-primary">Admin Login</div>
     <div class="card-body">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" [ngClass]="{ 'has-error': submitted && hasError }">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-user text-muted"></i></span>
           </div>
           <input formControlName="email" id="email" type="email" class="form-control" name="email" placeholder="Email" value="">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" [ngClass]="{ 'has-error': submitted && hasError }">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-lock text-muted"></i></span>
           </div>
