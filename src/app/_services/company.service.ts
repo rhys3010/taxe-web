@@ -18,12 +18,33 @@ export class CompanyService {
 
   /**
    * Retrieves a companny by ID via the API
-   * @param id
+   * @param id - Company'd ID
    */
   getCompany(id: string) {
     return this.http.get<any>(`${environment.apiUrl}/companies/${id}`)
       .pipe(map(company => {
         return company;
       }));
+  }
+
+  /**
+   * Retrieves a list of all of the company's employed drivers
+   * @param id - Company's ID
+   */
+  getDrivers(id: string) {
+    return this.http.get<any>(`${environment.apiUrl}/companies/${id}/drivers`)
+      .pipe(map(drivers => {
+        return drivers;
+      }));
+  }
+
+  /**
+   * Removes a driver by ID from the company
+   * @param companyId - Company's ID
+   * @param driverId - Driver's ID
+   */
+  removeDriver(companyId: string, driverId: string) {
+    // @ts-ignore
+    return this.http.patch(`${environment.apiUrl}/companies/${companyId}/drivers/${driverId}`);
   }
 }

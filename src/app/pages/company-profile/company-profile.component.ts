@@ -8,7 +8,7 @@
  */
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { first } from 'rxjs/operators'
+import { first } from 'rxjs/operators';
 
 import { Company } from '../../_models/company';
 import { CompanyService } from '../../_services/company.service';

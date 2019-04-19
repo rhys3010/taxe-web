@@ -56,32 +56,12 @@
                 </th>
                 </thead>
                 <tbody>
-                <tr>
+                <tr *ngFor="let driver of drivers">
+                  <td>{{driver.name}}</td>
+                  <td>{{driver.email}}</td>
+                  <td>{{driver.available}}</td>
                   <td>
-                    John Doe
-                  </td>
-                  <td>
-                    johndoe@gmail.com
-                  </td>
-                  <td>
-                    Available
-                  </td>
-                  <td>
-                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right">Remove</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Jane Doe
-                  </td>
-                  <td>
-                    janedoe@gmail.com
-                  </td>
-                  <td>
-                    <span class="text-danger mat-body-strong">Unavailable</span>
-                  </td>
-                  <td>
-                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right">Remove</button>
+                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right" (click)="removeDriver(driver._id)">Remove</button>
                   </td>
                 </tr>
                 </tbody>
