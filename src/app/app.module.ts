@@ -27,6 +27,7 @@ import {NotificationService} from './_services/notification.service';
 import { CompanyService } from './_services/company.service';
 
 import { LayoutsModule } from './layouts/layouts.module';
+import {BookingService} from './_services/booking.service';
 
 
 
@@ -48,6 +49,7 @@ import { LayoutsModule } from './layouts/layouts.module';
     AuthenticationService,
     NotificationService,
     CompanyService,
+    BookingService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

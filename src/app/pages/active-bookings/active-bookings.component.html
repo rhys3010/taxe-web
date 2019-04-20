@@ -1,4 +1,81 @@
-<div class="main-content">
-  <h1>Active Bookings</h1>
-</div>
+<!--
+   - active-bookings.component.html
+   -
+   - The main html layout for the active bookings page
+   -
 
+   - @author Rhys Evans
+   - @version 0.1
+-->
+
+<div class="main-content">
+  <div class="container-fluid">
+    <!-- Active Bookings Table -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4>Active Bookings</h4>
+            <p class="card-category">All ongoing bookings claimed by your company.</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                <th>Pickup Location</th>
+                <th>Destination</th>
+                <th>Time</th>
+                <th>No. Passengers</th>
+                <th>Driver</th>
+                <th>Status</th>
+                <th><!-- Release Button --></th>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Fferm Penglais</td>
+                  <td>Aberystwyth Uni Campus</td>
+                  <td>15:03</td>
+                  <td>2</td>
+                  <!-- Driver Select -->
+                  <td>
+                    <div class="dropdown">
+                      <button href="#" class="btn dropdown-toggle btn-sm btn-primary" data-toggle="dropdown" aria-expanded="true">
+                        Unallocated
+                        <b class="caret"></b>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">John Doe</a></li>
+                        <li><a href="#">James Doe</a></li>
+                        <li><a href="#">Jason Bloggs</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                  <!-- Status Select -->
+                  <td>
+                    <div class="dropdown">
+                      <button href="#" class="btn dropdown-toggle btn-sm btn-primary" data-toggle="dropdown" aria-expanded="true">
+                        In_Progress
+                        <b class="caret"></b>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">In Progress</a></li>
+                        <li><a href="#">Arrived</a></li>
+                        <li><a href="#">Finished</a></li>
+                        <li><a href="#">Cancelled</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm">Release</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

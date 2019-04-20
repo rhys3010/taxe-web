@@ -63,7 +63,7 @@ export class DriversComponent implements OnInit {
           this.drivers = drivers;
         },
         error => {
-          // If error ocurred, set drivers to empty
+          // If error occurred, set drivers to empty
           this.drivers = [];
         }
       );

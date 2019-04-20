@@ -47,4 +47,26 @@ export class CompanyService {
     // @ts-ignore
     return this.http.patch(`${environment.apiUrl}/companies/${companyId}/drivers/${driverId}`);
   }
+
+  /**
+   * Returns a list of the company's bookings
+   * @param companyId - Company's ID
+   */
+  getBookings(companyId: string) {
+    return this.http.get(`${environment.apiUrl}/companies/${companyId}/bookings`)
+      .pipe(map(bookings => {
+        return bookings;
+      }));
+  }
+
+  /**
+   * Returns a list of the company's active bookings
+   * @param companyId - Company's ID
+   */
+  getActiveBookings(companyId: string){
+    return this.http.get(`${environment.apiUrl}/companies/${companyId}/bookings?active=true`)
+      .pipe(map(bookings => {
+        return bookings;
+      }));
+  }
 }
