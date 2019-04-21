@@ -18,14 +18,16 @@
             <p class="card-category">Recruit a Driver into your company</p>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-8">
-                <input id="email" type="email" class="form-control" name="email" placeholder="Driver's Email" value="">
+            <form [formGroup]="addDriverForm" (ngSubmit)="submitAddDriverForm()">
+              <div class="row">
+                <div class="col-sm-8">
+                  <input formControlName="email" id="email" type="email" class="form-control" name="email" placeholder="User's Email" value="">
+                </div>
+                <div class="col-sm-4">
+                  <button class="btn btn-primary btn-sm mat-raised-button text-white pull-right" type="submit">Add</button>
+                </div>
               </div>
-              <div class="col-sm-4">
-                <button class="btn btn-primary btn-sm mat-raised-button text-white pull-right" type="submit">Add</button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

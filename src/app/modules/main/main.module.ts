@@ -41,7 +41,9 @@ import {BookingDialogComponent} from '../../components/booking-dialog/booking-di
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     CompanyProfileComponent,

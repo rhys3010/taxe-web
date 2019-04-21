@@ -39,6 +39,17 @@ export class CompanyService {
   }
 
   /**
+   * Adds a driver to a company
+   * @param companyId - Company's Id
+   * @param driverEmail - Driver's email
+   */
+  addDriver(companyId: string, driverEmail: string) {
+    return this.http.patch<any>(`${environment.apiUrl}/companies/${companyId}/drivers`, {
+      driver: driverEmail
+    });
+  }
+
+  /**
    * Removes a driver by ID from the company
    * @param companyId - Company's ID
    * @param driverId - Driver's ID
