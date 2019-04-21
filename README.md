@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/EK1RSH9.png" width="120" height="120">
 
-# Tax-E Company Management Web App
+# Tax-E Company Management Web Client
 
 Angular Frontend Application to interface with the Tax-E API to allow company admins to manage their company's preferences, drivers and bookings.
 

@@ -47,7 +47,6 @@ export class BookingHistoryComponent implements OnInit {
       .pipe(first())
       .subscribe(
         booking => {
-          console.log(booking);
           // Pass to dialog
           this.dialog.open(BookingDialogComponent, {
             data: {
