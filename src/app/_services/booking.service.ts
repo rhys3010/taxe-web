@@ -24,7 +24,10 @@ export class BookingService {
    * @param companyId - The claiming company's ID
    */
   claimBooking(bookingId: string, companyId: string) {
-    return this.http.patch<any>(`${environment.apiUrl}/bookings/${companyId}/claim`, companyId);
+    // Create a booking object to update
+    let updatedBooking = new Booking();
+    updatedBooking.company = companyId;
+    return this.http.patch<any>(`${environment.apiUrl}/bookings/${bookingId}/claim`, updatedBooking);
   }
 
   /**
@@ -43,5 +46,15 @@ export class BookingService {
    */
   editBooking(id: string, editedBooking: Booking) {
     return this.http.patch<any>(`${environment.apiUrl}/bookings/${id}`, editedBooking);
+  }
+
+  /**
+   * Get a list of all unallocated (available) bookings
+   */
+  getAvailableBookings() {
+    return this.http.get<any>(`${environment.apiUrl}/bookings`)
+      .pipe(map(bookings => {
+        return bookings;
+      }));
   }
 }
