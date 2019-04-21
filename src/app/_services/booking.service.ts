@@ -19,6 +19,17 @@ export class BookingService {
   constructor(private http: HttpClient) {}
 
   /**
+   * Retrieve a booking object from the API by ID
+   * @param id - Booking's ID
+   */
+  getBooking(id: string) {
+    return this.http.get<any>(`${environment.apiUrl}/bookings/${id}`)
+      .pipe(map(booking => {
+        return booking;
+      }));
+  }
+
+  /**
    * Claim a booking for a given company
    * @param bookingId - The booking's id
    * @param companyId - The claiming company's ID

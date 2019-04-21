@@ -1,0 +1,53 @@
+<!--
+   - booking-dialog.component.html
+   -
+   - The main html layout for booking overview dialog
+   -
+
+   - @author Rhys Evans
+   - @version 0.1
+-->
+
+<h1 mat-dialog-title>Full Booking Overview</h1>
+<div mat-dialog-content>
+  <table class="table">
+    <tbody>
+    <!-- Pickup Location -->
+    <tr>
+      <td><i class="material-icons text-primary">my_location</i></td>
+      <td class="mat-body-strong text-right">Pickup Location: </td>
+      <td>{{data.booking.pickup_location}}</td>
+    </tr>
+    <!-- Destination -->
+    <tr>
+      <td><i class="material-icons text-primary">location_on</i></td>
+      <td class="mat-body-strong text-right">Destination: </td>
+      <td>{{data.booking.destination}}</td>
+    </tr>
+    <!-- Time -->
+    <tr>
+      <td><i class="material-icons text-primary">access_time</i></td>
+      <td class="mat-body-strong text-right">Time: </td>
+      <td>{{data.booking.time | date: 'HH:mm'}}</td>
+    </tr>
+    <!-- Number Of Passengers -->
+    <tr>
+      <td><i class="material-icons text-primary">people</i></td>
+      <td class="mat-body-strong text-right">No. Passengers: </td>
+      <td>{{data.booking.no_passengers}}</td>
+    </tr>
+    <!-- Driver -->
+    <tr>
+      <td><i class="material-icons text-primary">account_box</i></td>
+      <td class="mat-body-strong text-right">Driver: </td>
+      <td>{{data.booking.driver ? data.booking.driver.name : 'N/A'}}</td>
+    </tr>
+    <!-- Customer -->
+    <tr>
+      <td><i class="material-icons text-primary">person</i></td>
+      <td class="mat-body-strong text-right">Customer: </td>
+      <td>{{data.booking.customer.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

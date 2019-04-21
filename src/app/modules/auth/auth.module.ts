@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutes } from './auth.routing';
 
-import { LoginComponent } from '../../pages/login/login.component';
+import { LoginComponent } from '../../components/login/login.component';
 
 import {
   MatButtonModule,

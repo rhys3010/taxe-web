@@ -10,6 +10,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { CompanyService } from './_services/company.service';
 
 import { LayoutsModule } from './layouts/layouts.module';
 import {BookingService} from './_services/booking.service';
+import {BookingDialogComponent} from './components/booking-dialog/booking-dialog.component';
 
 
 
@@ -41,7 +43,8 @@ import {BookingService} from './_services/booking.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    LayoutsModule
+    LayoutsModule,
+    BrowserAnimationsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [

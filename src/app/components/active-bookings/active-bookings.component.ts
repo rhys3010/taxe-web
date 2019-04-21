@@ -48,7 +48,7 @@ export class ActiveBookingsComponent implements OnInit {
    */
   getDriverName(id: string) {
     // If the driver's ID doesn't exist, return 'Unallocated'
-    if (!id) {
+    if (!id || !this.drivers) {
       return 'Unallocated';
     }
     const user = this.drivers.find(driver => driver._id === id);

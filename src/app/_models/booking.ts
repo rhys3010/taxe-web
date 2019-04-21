@@ -6,6 +6,7 @@
  * @author Rhys Evans
  * @version 0.1
  */
+import {User} from './user';
 
 export class Booking {
   _id: string;
@@ -14,8 +15,8 @@ export class Booking {
   time: Date;
   no_passengers: number;
   status: string;
-  customer: string;
-  driver: string;
+  customer: string | User;
+  driver: string | User;
   company: string;
   notes: string[];
   created_at: Date;

@@ -13,12 +13,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainRoutes } from './main.routing';
 
-import { CompanyProfileComponent } from '../../pages/company-profile/company-profile.component';
-import { ActiveBookingsComponent } from '../../pages/active-bookings/active-bookings.component';
-import { AvailableBookingsComponent } from '../../pages/available-bookings/available-bookings.component';
-import { BookingHistoryComponent } from '../../pages/booking-history/booking-history.component';
-import { DriversComponent } from '../../pages/drivers/drivers.component';
-
+import { CompanyProfileComponent } from '../../components/company-profile/company-profile.component';
+import { ActiveBookingsComponent } from '../../components/active-bookings/active-bookings.component';
+import { AvailableBookingsComponent } from '../../components/available-bookings/available-bookings.component';
+import { BookingHistoryComponent } from '../../components/booking-history/booking-history.component';
+import { DriversComponent } from '../../components/drivers/drivers.component';
 
 import {
   MatButtonModule,
@@ -26,8 +25,11 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
+  MatDialogModule,
   MatSelectModule
 } from '@angular/material';
+import {BookingDialogComponent} from '../../components/booking-dialog/booking-dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -39,13 +41,18 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatDialogModule
   ],
   declarations: [
     CompanyProfileComponent,
     ActiveBookingsComponent,
     AvailableBookingsComponent,
     BookingHistoryComponent,
-    DriversComponent
-  ]
+    DriversComponent,
+    BookingDialogComponent
+  ],
+  entryComponents: [
+    BookingDialogComponent
+  ],
 })
 export class MainModule { }
