@@ -60,6 +60,17 @@ export class CompanyService {
   }
 
   /**
+   * Returns a list of the company's admins
+   * @param companyId - The company's ID
+   */
+  getAdmins(companyId: string) {
+    return this.http.get(`${environment.apiUrl}/companies/${companyId}/admins`)
+      .pipe(map(admins => {
+        return admins;
+      }));
+  }
+
+  /**
    * Returns a list of the company's active bookings
    * @param companyId - Company's ID
    */

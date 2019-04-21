@@ -102,17 +102,9 @@
                 </th>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>John Doe</td>
-                  <td>johndoe@gmail.com</td>
-                </tr>
-                <tr>
-                  <td>Rhys Evans</td>
-                  <td>rhys301097@gmail.com</td>
-                </tr>
-                <tr>
-                  <td>Andrew Drew</td>
-                  <td>drewdog123@hotmail.com</td>
+                <tr *ngFor="let admin of admins">
+                  <td>{{admin.name}}</td>
+                  <td>{{admin.email}}</td>
                 </tr>
                 </tbody>
               </table>
