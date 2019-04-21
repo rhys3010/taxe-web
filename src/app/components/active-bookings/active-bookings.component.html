@@ -45,7 +45,7 @@
                       </button>
                       <ul class="dropdown-menu">
                         <li *ngFor="let driver of drivers">
-                          <a (click)="editBookingDriver(booking._id, driver._id)">{{driver.name}}</a>
+                          <a (click)="editBookingDriver(booking._id, driver._id)" [ngClass]="{'text-danger': !driver.available}">{{driver.name}}</a>
                         </li>
                       </ul>
                     </div>

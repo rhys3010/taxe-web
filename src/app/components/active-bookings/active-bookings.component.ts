@@ -81,7 +81,7 @@ export class ActiveBookingsComponent implements OnInit {
   }
 
   /**
-   * Load a list of all the booking's currently available drivers
+   * Load a list of all the company's drivers
    */
   private loadAvailableDrivers() {
     // Get the list of drivers from the API and filter by availability
@@ -89,8 +89,6 @@ export class ActiveBookingsComponent implements OnInit {
       .pipe(first())
       .subscribe(
         drivers => {
-          // Filter the returned list to remove any unavailable drivers
-          // this.drivers = drivers.filter(driver => driver.available);
           this.drivers = drivers;
         },
         error => {

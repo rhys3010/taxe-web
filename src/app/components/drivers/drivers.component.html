@@ -59,7 +59,7 @@
                 <tr *ngFor="let driver of drivers">
                   <td>{{driver.name}}</td>
                   <td>{{driver.email}}</td>
-                  <td>{{driver.available}}</td>
+                  <td class="mat-body-strong" [ngClass]="{'text-danger': !driver.available}">{{driver.available ? 'Available' : 'Unavailable'}}</td>
                   <td>
                     <button mat-raised-button type="submit" class="btn btn-danger btn-sm pull-right" (click)="removeDriver(driver._id)">Remove</button>
                   </td>
