@@ -31,22 +31,22 @@
                 <th><!-- Release Button --></th>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Fferm Penglais</td>
-                  <td>Aberystwyth Uni Campus</td>
-                  <td>15:03</td>
-                  <td>2</td>
+                <tr *ngFor="let booking of bookings">
+                  <td>{{booking.pickup_location}}</td>
+                  <td>{{booking.destination}}</td>
+                  <td>{{booking.time | date: 'HH:mm'}}</td>
+                  <td>{{booking.no_passengers}}</td>
                   <!-- Driver Select -->
                   <td>
                     <div class="dropdown">
                       <button href="#" class="btn dropdown-toggle btn-sm btn-primary" data-toggle="dropdown" aria-expanded="true">
-                        Unallocated
+                        {{getDriverName(booking.driver)}}
                         <b class="caret"></b>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a href="#">John Doe</a></li>
-                        <li><a href="#">James Doe</a></li>
-                        <li><a href="#">Jason Bloggs</a></li>
+                        <li *ngFor="let driver of drivers">
+                          <a (click)="editBookingDriver(booking._id, driver._id)">{{driver.name}}</a>
+                        </li>
                       </ul>
                     </div>
                   </td>
@@ -54,19 +54,19 @@
                   <td>
                     <div class="dropdown">
                       <button href="#" class="btn dropdown-toggle btn-sm btn-primary" data-toggle="dropdown" aria-expanded="true">
-                        In_Progress
+                        {{booking.status}}
                         <b class="caret"></b>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a href="#">In Progress</a></li>
-                        <li><a href="#">Arrived</a></li>
-                        <li><a href="#">Finished</a></li>
-                        <li><a href="#">Cancelled</a></li>
+                        <li><a (click)="editBookingStatus(booking._id, 'In_Progress')">In Progress</a></li>
+                        <li><a (click)="editBookingStatus(booking._id, 'Arrived')">Arrived</a></li>
+                        <li><a (click)="editBookingStatus(booking._id, 'Finished')">Finished</a></li>
+                        <li><a (click)="editBookingStatus(booking._id, 'Cancelled')">Cancelled</a></li>
                       </ul>
                     </div>
                   </td>
                   <td>
-                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm">Release</button>
+                    <button mat-raised-button type="submit" class="btn btn-danger btn-sm" (click)="releaseBooking(booking._id)">Release</button>
                   </td>
                 </tr>
                 </tbody>

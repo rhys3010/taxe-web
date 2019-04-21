@@ -47,7 +47,6 @@ export class DriversComponent implements OnInit {
         this.notificationService.showNotification('success', 'done',  'Driver Successfully Removed');
         // Update View
         this.loadDrivers();
-        console.log(this.drivers);
       });
   }
 
